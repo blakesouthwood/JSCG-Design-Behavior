@@ -10,6 +10,73 @@
 </head>
 <body><br><br><br>
 <b>JS Function Design Tool</b><br>
+<br>
+Quote from Edsger Dijkstra from his Turing Award Speech 1972 The Humble Programmer.<br>
+"The vision is that, well before the seventies have run to completion, we shall<br>
+ be able to design and implement the kind of systems that are now straining our <br>
+ programming ability, at the expense of only a few percent in man-years of what <br>
+ they cost us now, and that besides that, these systems will be virtually free of bugs.<br>
+  These two improvements go hand in hand. In the latter respect software seems to be<br>
+   different from many other products, where as a rule a higher quality implies a <br>
+   higher price. Those who want really reliable software will discover that they <br>
+   must find means of avoiding the majority of bugs to start with, and as a result <br>
+   the programming process will become cheaper. If you want more effective programmers,<br>
+    you will discover that they should not waste their time debugging, they should not <br>
+    introduce the bugs to start with. In other words: both goals point to the same change.""
+<br><br>
+"I now suggest that we confine ourselves to the design and implementation of intellectually<br>
+ manageable programs. If someone fears that this restriction is so severe that we cannot<br>
+  live with it, I can reassure him: the class of intellectually manageable programs is <br>
+  still sufficiently rich to contain many very realistic programs for any problem capable<br>
+   of algorithmic solution. We must not forget that it is not our business to make programs, <br>
+   it is our business to design classes of computations that will display a desired behaviour.<br>
+    The suggestion of confining ourselves to intellectually manageable programs is the <br>
+    basis for the first two of my announced six arguments.""<br><br>
+<br>
+"Argument three is based on the constructive approach to the problem of program correctness. <br>
+Today a usual technique is to make a program and then to test it. But: program testing <br>
+can be a very effective way to show the presence of bugs, but is hopelessly inadequate<br>
+ for showing their absence. The only effective way to raise the confidence level of a <br>
+ program significantly is to give a convincing proof of its correctness. But one should <br>
+ not first make the program and then prove its correctness, because then the requirement <br>
+ of providing the proof would only increase the poor programmer’s burden. On the contrary:<br>
+  the programmer should let correctness proof and program grow hand in hand. Argument three <br>
+  is essentially based on the following observation. If one first asks oneself what the <br>
+  structure of a convincing proof would be and, having found this, then constructs a <br>
+  program satisfying this proof’s requirements, then these correctness concerns turn <br>
+  out to be a very effective heuristic guidance. By definition this approach is only <br>
+  applicable when we restrict ourselves to intellectually manageable programs, but it<br>
+   provides us with effective means for finding a satisfactory one among these.<br><br>
+
+Argument four has to do with the way in which the amount of intellectual effort needed <br>
+to design a program depends on the program length. It has been suggested that there <br>
+is some kind of law of nature telling us that the amount of intellectual effort needed <br>
+grows with the square of program length. But, thank goodness, no one has been able to<br>
+ prove this law. And this is because it need not be true. We all know that the only <br>
+ mental tool by means of which a very finite piece of reasoning can cover a myriad cases <br>
+ is called “abstraction”; as a result the effective exploitation of his powers of<br>
+  abstraction must be regarded as one of the most vital activities of a competent<br>
+   programmer. In this connection it might be worth-while to point out that the <br>
+   purpose of abstracting is not to be vague, but to create a new semantic level in <br>
+   which one can be absolutely precise. Of course I have tried to find a fundamental <br>
+   cause that would prevent our abstraction mechanisms from being sufficiently <br>
+   effective. But no matter how hard I tried, I did not find such a cause. As a <br>
+   result I tend to the assumption —up till now not disproved by experience— that <br>
+   by suitable application of our powers of abstraction, the intellectual effort <br>
+   needed to conceive or to understand a program need not grow more than proportional<br>
+    to program length. But a by-product of these investigations may be of much greater<br>
+     practical significance, and is, in fact, the basis of my fourth argument. <br>
+     The by-product was the identification of a number of patterns of abstraction<br>
+      that play a vital role in the whole process of composing programs. Enough is<br>
+       now known about these patterns of abstraction that you could devote a lecture<br>
+        to about each of them. What the familiarity and conscious knowledge of these<br>
+         patterns of abstraction imply dawned upon me when I realized that, had they <br>
+         been common knowledge fifteen years ago, the step from BNF to syntax-directed<br>
+          compilers, for instance, could have taken a few minutes instead of a few years.<br>
+           Therefore I present our recent knowledge of vital abstraction patterns as the <br>
+           fourth argument.""
+
+<br><br>
 I am aware that this software project is ambitious but it will become vital <br>
 to keep up with the growing demand for writing JavaScript that is bug free of logic bugs<br>
 inside the function level to speed up unit testing. <br><br>
@@ -21,6 +88,12 @@ Using English steps or pseudocode to get the logic straight. Logic that works ri
 not in the literal form (till later) but added to a knowledge database of the working translation<br>
 from intent what to do and pseudocode and source code in JavaScript.<br>
 <br>
+I am fully aware that what I am proposing means tracking intially thousands and eventually<br>
+billions and perhaps trillions of chunks of code and pretranslated intent to code.<br>
+And the tracking of bad logic based on the design of pseudocode.<br>
+The way I think of this problem is as Alan Turings Enigma translator at Betchley Park, Britain in WW2.<br>
+It's all on how you think about a problem. It's just encryting meaning and deciphering<br>
+the translation.<br>
 To be absolutely clear this is for the sole purpose of preventing logic bugs and creating<br>
 a way of translating English literate programming descriptions into correct pseudocode<br>
 which is then translated into JavaScript to build new functions faster.<br>
@@ -148,6 +221,81 @@ of boolean logic for a function. And realize that till now pseudocode<br>
 hasn't been standardized. <br>
 I will start with the translation  aspect of literate to pseudocode and pseudocode<br>
 to JS to begin with.<br>
+
+<br>
+Quotes from the CS Legends.<br>
+<br>
+<b>
+When someone says "I want a programming language in which I need <br>
+only say what I wish done," give him a lollipop.</b><br>
+  Alan Perlis <br>
+
+<br>
+John Backus<br>
+will make it possible to say what you want done rather than how<br>
+ to do it.<br>
+ backus   ##########################################<br>
+ new methodology in how we think about the program<br>
+<br>
+ Grace Hopper<br>
+we need to define the problem instead of the procedures<br>
+relationships processes<br>
+<br>
+ Watts Humphrey translator between human and system and<br>
+what you want to do<br>
+<br>
+ Don Knuth instead of telling the computer what we want to do (thru code instructions)<br>
+ rather why don't we tell another human what we want the comptuer to do - that was<br>
+ his breakthrough description paradigm shift.<br>
+<br>
+Tony Hoare Stanford Paper<br>
+<br>
+Program design. The first, and very difficult, aspect of design is<br>
+ deciding what the program is to do, and formulating this as a clear,<br>
+  precise, and acceptable specification.<br>
+<br><br>
+  Falkolf #####################=======<br>
+There is apparently a gap between the way people would like to think,[intent]<br>
+ and the way machines do things[boolean logic].<br>
+
+<br>
+a programming language that I can ...<br>
+/ /Perlis  ...  say what I want done<br><br>
+// Backus  ...  say what you want done rather than how to do it<br><br>
+// Backus  ...  new methodology in how we think about the program<br><br>
+// Hopper  ...  we need to define the problem instead of the procedures<br><br>
+               relationships processes//implying what trying to do<br><br>
+// Watts Humphrey... translator between human and system(machine) and what you want to do<br><br>
+// <keygen name="name" challenge="string" keytype="RSA" keyparams="medium">uth   ... tell another human what we want the computer to do literate programming<br><br>
+// Hoare   ...  expressing how the program is to run and what it is intended to accomplish;<br>
+                 expressed at various levels,<br><br>
+<br><br>
+ //Jean Sammet  ... a large decrease in the amount of detail a user must provide.<br>
+               more statements about what is to be done and fewer details on how to do it.<br>
+               English programming.<br>
+ //Humphrey ...designing a language as a translator between human beings and machines.<br><br>
+ ##########################################################<br>
+ Falkoff    ... a gap between  way people would like to think,<br>
+                 and the way machines do things.<br>
+<br><br>
+
+ Dijkstra ...  what the algorithmn does for you, and how it works, we make machine behavior<br>
+<br>
+ Marvin Minsky ...progrmaming languages of the future will<br>
+                  be more concerned with goals and less with procedures<br>
+                  specified by the programmer<br>
+                   ##############################################<br><br>
+Robin Milner ... what programmers would like to "think" about<br>
+                 "what to do rather than how to do it"<br>
+<br><br>
+Hopper      .... the program exists at several levels<br><br>
+<br>
+Finally, Fred Brooks wrote that the only way to speed up software productivity -<br>
+the so called "No Silver Bullet" to speed up software productivity(speed of production 10X)<br>
+ is by reducing the time spent "thinking" (to design, build, code, debug, read, etc) and increasing<br>
+reuse [of code and knoweldge to make that code behavior] and high level languages.<br>
+But my initial idea for this project was to reduce boolean logic bugs by reusing stored<br>
+translations of pseudocode into JS code with a generously large standard library of JS methods.<br>
 
 </body>
 </html>
